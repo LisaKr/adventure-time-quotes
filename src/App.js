@@ -1,28 +1,27 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import styled from "styled-components";
+import "./App.css";
+
+import Header from "./header.js";
+import Body from "./body.js";
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <StyledApp>
+        <Header />
+        <Body />
+      </StyledApp>
     );
   }
 }
+
+const StyledApp = styled.div`
+  height: 100%;
+  background-image: url("http://www.themesltd.com/headers2/pixel_adventure_time.png");
+  background-size: 200px 100px;
+  background-repeat: repeat;
+  width: 100%;
+`;
 
 export default App;
