@@ -1,19 +1,31 @@
 import React from "react";
 import styled from "styled-components";
 import { useAxios } from "./hooks/useAxios";
+import useFilter from "./hooks/useFilter";
 
 function Quotes(props) {
   const quotes = useAxios(
     "https://adventure-time-quote-api.glitch.me/api/quotes"
   );
 
+  const filteredQuotes = useFilter(quotes, props.name);
+
+  console.log("filtered quotes", filteredQuotes);
+
   return (
     <StyledQuotes>
-      {quotes.map((q, index) => {
-        console.log(index, q);
+      {Object.keys(filteredQuotes).map((character, id) => {
+        {
+          /*looping through all the characters (=keys) first*/
+        }
         return (
-          <div key={index} className="quoteContainer">
-            <p>{q}</p>
+          /*unique key is the id of the character being currently looped*/
+          <div key={character} className="quoteContainer">
+            {/*inside every key (name) we loop through the corresponding quotes
+            belonging to this key*/}
+            {quotes[character].map(quote => {
+              return <p key={quote}>{quote}</p>;
+            })}
           </div>
         );
       })}

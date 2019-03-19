@@ -8,13 +8,18 @@ export const useAxios = url => {
   const getData = async () => {
     const { data } = await axios.get(url);
 
+    console.log(data);
+
+    let obj = {};
+
     let allQuotes = [];
 
     await data.forEach(el => {
       allQuotes = [...allQuotes, ...el.quotes];
+      obj[el.name] = el.quotes;
     });
 
-    setQuotes(allQuotes);
+    setQuotes(obj);
   };
 
   //useEffect cannot return a promise, only another function

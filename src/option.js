@@ -5,7 +5,14 @@ function Option(props) {
   return (
     <StyledOption>
       <img src={props.url} alt="avatar" />
-      <input type="radio" name="character" value={props.name} />
+      <input
+        type="radio"
+        name="character"
+        value={props.name}
+        onClick={() => {
+          props.handleClick(props.name);
+        }}
+      />
     </StyledOption>
   );
 }
