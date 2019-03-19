@@ -13,7 +13,7 @@ const StyledTitle = styled.div`
   font-family: "Kranky";
   h1 {
     width: 50%;
-    margin: 0.5em auto;
+    margin: 0 auto;
     text-align: center;
     font-size: 2.5em;
   }

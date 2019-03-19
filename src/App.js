@@ -9,7 +9,6 @@ class App extends Component {
   render() {
     return (
       <StyledApp>
-        <Header />
         <Body />
       </StyledApp>
     );
@@ -21,7 +20,6 @@ const StyledApp = styled.div`
   background-image: url("http://www.themesltd.com/headers2/pixel_adventure_time.png");
   background-size: 200px 100px;
   background-repeat: repeat;
-  width: 100%;
 `;
 
 export default App;

@@ -4,7 +4,7 @@ import styled from "styled-components";
 function Option(props) {
   return (
     <StyledOption>
-      <img src={props.url} />
+      <img src={props.url} alt="avatar" />
       <input type="radio" name="character" value={props.name} />
     </StyledOption>
   );

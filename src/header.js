@@ -11,7 +11,10 @@ const StyledHeader = styled.div`
 function Header(props) {
   return (
     <StyledHeader>
-      <img src="https://vignette.wikia.nocookie.net/internationalbroadcasts/images/0/04/Adventure_Time_header.jpg/revision/latest?cb=20140222050741" />
+      <img
+        src="https://vignette.wikia.nocookie.net/internationalbroadcasts/images/0/04/Adventure_Time_header.jpg/revision/latest?cb=20140222050741"
+        alt="adventure time"
+      />
     </StyledHeader>
   );
 }

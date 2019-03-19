@@ -7,12 +7,14 @@ import Quotes from "./quotes.js";
 
 function Body(props) {
   return (
-    <div>
+    <StyledBody>
       <Title />
       <Selection />
       <Quotes />
-    </div>
+    </StyledBody>
   );
 }
+
+const StyledBody = styled.div``;
 
 export default Body;
