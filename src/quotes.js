@@ -7,17 +7,13 @@ function Quotes(props) {
   const quotes = useAxios(
     "https://adventure-time-quote-api.glitch.me/api/quotes"
   );
-
   const filteredQuotes = useFilter(quotes, props.name);
-
-  console.log("filtered quotes", filteredQuotes);
 
   return (
     <StyledQuotes>
       {Object.keys(filteredQuotes).map((character, id) => {
-        {
-          /*looping through all the characters (=keys) first*/
-        }
+        /*looping through all the characters (=keys) first*/
+
         return (
           /*unique key is the id of the character being currently looped*/
           <div key={character} className="quoteContainer">
@@ -43,9 +39,10 @@ const StyledQuotes = styled.div`
   text-align: center;
   margin-top: 3em;
   p {
-    border: 5px solid black;
+    border: 1px solid black;
     margin: 0.5em;
     background: white;
+    padding: 0.5em;
   }
   .quoteContainer {
     width: 60%;

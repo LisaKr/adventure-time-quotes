@@ -19,7 +19,7 @@ function Option(props) {
 
 const StyledOption = styled.div`
   img {
-    height: 60px;
+    height: 100px;
     border-radius: 100%;
     border: 1px solid black;
   }

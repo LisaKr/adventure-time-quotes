@@ -15,7 +15,7 @@ const StyledTitle = styled.div`
     width: 50%;
     margin: 0 auto;
     text-align: center;
-    font-size: 2.5em;
+    font-size: 4em;
   }
 `;
 
