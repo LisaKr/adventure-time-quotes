@@ -1,18 +1,26 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import { useState } from "react";
+
 import "./App.css";
+import Title from "./title.js";
+import Selection from "./selection.js";
+import Quotes from "./quotes.js";
 
-import Header from "./header.js";
-import Body from "./body.js";
+function App(props) {
+  const [name, setName] = useState("all");
 
-class App extends Component {
-  render() {
-    return (
-      <StyledApp>
-        <Body />
-      </StyledApp>
-    );
+  function handleClick(newName) {
+    return setName(newName);
   }
+
+  return (
+    <StyledApp>
+      <Title />
+      <Selection handleClick={handleClick} />
+      <Quotes name={name} />
+    </StyledApp>
+  );
 }
 
 const StyledApp = styled.div`
