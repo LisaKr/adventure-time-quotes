@@ -4,7 +4,7 @@ import styled from "styled-components";
 function Title() {
   return (
     <StyledTitle>
-      <h1> Get some wisdom, dude! </h1>
+      <h1>Get some wisdom, dude!</h1>
     </StyledTitle>
   );
 }
