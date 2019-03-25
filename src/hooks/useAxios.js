@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-export const useAxios = url => {
+export default function useAxios(url) {
+  const h = "h";
   //in order to set state
   const [value, setValue] = useState([]);
   //function for fetching data, creating array of quotes and setting the state
@@ -9,12 +10,16 @@ export const useAxios = url => {
     const { data } = await axios.get(url);
     //data comes back as an array, I want to have it as an object though
 
-    let obj = {};
+    let newArr = [];
+
     await data.forEach(el => {
-      obj[el.name] = el.quotes;
+      newArr.push({
+        name: el.name,
+        quotes: el.quotes
+      });
     });
     //setting it to state, so that there is a value to return
-    setValue(obj);
+    setValue(newArr);
   };
 
   //useEffect cannot return a promise, only another function
@@ -25,4 +30,4 @@ export const useAxios = url => {
 
   //value is not an empty array anymore, but it was set to state in the getData function
   return value;
-};
+}
